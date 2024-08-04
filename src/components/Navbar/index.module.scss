@@ -1,0 +1,100 @@
+nav.navbar {
+  width: 100%;
+  .navbar_container {
+    .social_media_links {
+      background-color: var(--main-blue);
+      .socail_nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        .icons_container {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          .icon {
+            svg {
+              color: var(--main-white);
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+
+        .join_us {
+          button {
+            background-color: transparent;
+            border: none;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            a {
+              color: var(--main-white);
+              text-decoration: none;
+              font-style: 16px;
+              font-weight: var(--meduim);
+            }
+
+            img {
+            }
+          }
+        }
+      }
+    }
+
+    .sec_navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      .pages_links {
+        ul {
+          display: flex;
+          gap: 22px;
+          padding: 0;
+
+          li {
+            margin: 0;
+            list-style-type: none;
+            a {
+              text-decoration: none;
+              color: var(--main-black);
+              font-size: var(--size-20);
+              font-weight: var(--meduim);
+            }
+
+            ul.drop_down:not(.active) {
+              display: none;
+              li {
+                a {
+                  p {
+                    margin: 0;
+                  }
+
+                  svg {
+                  }
+                }
+              }
+            }
+          }
+
+          li.menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            a {
+              p {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,226 @@
+section.who_we_are {
+  position: relative;
+  width: 100%;
+  // overflow: hidden;
+  .section_bg {
+    position: absolute;
+    right: 0;
+    top: -240px;
+    z-index: -1;
+
+    max-height: 100%;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      opacity: 0.1;
+    }
+  }
+
+  .section_container {
+    margin-top: 169px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    .text_container {
+      max-width: 551px;
+      .main_section_title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-items: center;
+        margin-bottom: 24px;
+
+        .title {
+          h1 {
+            margin: 0;
+            font-size: var(--size-32);
+            color: var(--sec-blue);
+          }
+        }
+
+        .icon_container {
+          img {
+          }
+        }
+      }
+
+      .sec_title {
+        .title {
+          margin-bottom: 24px;
+          h1 {
+            margin: 0;
+            color: var(--main-blue);
+            font-size: var(--size-48);
+          }
+        }
+      }
+
+      .main_desc {
+        margin-bottom: 40px;
+        p {
+          margin: 0;
+          font-size: var(--size-20);
+          color: var(--gray-600);
+        }
+      }
+
+      .our_vision {
+        .title {
+          margin-top: 32px;
+          margin-bottom: 24px;
+          h2 {
+            color: var(--sec-blue);
+            font-size: var(--size-36);
+          }
+        }
+
+        .desc {
+          p {
+            color: var(--gray-600);
+            text-align: justify;
+            font-size: var(--size-32);
+            font-weight: 400;
+          }
+        }
+
+        .join_us_btn {
+          button {
+            background-color: var(--main-blue);
+            color: var(--main-white);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: var(--size-36);
+            width: 357px;
+          }
+        }
+      }
+    }
+
+    .sec_img_container {
+      position: relative;
+      margin-top: 140px;
+
+      .main_img_bg {
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 221px;
+        height: 219px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .main_image_container {
+        width: 482.7px;
+        height: 480px;
+        overflow: hidden;
+        position: relative;
+
+        .main_image {
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          object-fit: cover;
+        }
+
+        .sticker {
+          position: absolute;
+          right: 0;
+          bottom: -28px;
+          display: flex;
+
+          .shape {
+            position: relative;
+            img {
+            }
+          }
+
+          p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-27%, -47%);
+            color: var(--sec-blue);
+            font-size: var(--size-48);
+            font-weight: var(--bold);
+            margin-bottom: 0;
+            text-align: center;
+            span {
+              font-weight: var(--meduim);
+              font-size: var(--size-36);
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .our_message {
+    position: relative;
+
+    .section_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      position: relative;
+      .main_img_bg_bottom {
+        position: absolute;
+        top: -100px;
+        right: 120px;
+        width: 221px;
+        height: 219px;
+        z-index: -1;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .img_container {
+        width: 453px;
+        height: 260px;
+        overflow: hidden;
+        border-radius: 8.25px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .text_contaienr {
+        max-width: 500px;
+        .title {
+          margin-bottom: 24px;
+          h2 {
+            font-weight: var(--meduim);
+            font-size: var(--size-36);
+            text-align: right;
+            color: var(--sec-blue);
+          }
+        }
+
+        .desc {
+          p {
+            color: var(--gray-700);
+            font-size: var(--size-32);
+            font-weight: var(--regular);
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+}
