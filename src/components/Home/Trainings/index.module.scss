@@ -1,0 +1,218 @@
+section.trainings {
+  background-color: var(--main-blue);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 100px;
+
+  .sec_title {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 60px;
+
+    h1 {
+      margin: 0;
+      color: var(--main-white);
+    }
+
+    .img_container {
+      overflow: hidden;
+      img {
+        height: 8px;
+        width: 38px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .section_container {
+    .swiper_container {
+      .box {
+        padding: 12px;
+        background-color: var(--main-white);
+        box-shadow: 0px 1px 2px 0px #0000004d;
+        text-align: center;
+        width: 540px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        .img_contaienr {
+          border-radius: 8px;
+          position: relative;
+          overflow: hidden;
+          .lists {
+            display: none !important;
+            .list_title {
+            }
+
+            .list {
+              .icon_container {
+                svg {
+                }
+              }
+
+              p {
+              }
+            }
+          }
+          img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+          }
+        }
+
+        .text_container {
+          .title_sec {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+
+            .title {
+              p {
+                margin: 0;
+                font-size: var(--size-32);
+                font-weight: var(--meduim);
+                color: var(--main-blue);
+              }
+            }
+
+            .duration {
+              color: var(--main-blue);
+              font-size: var(--size-16);
+            }
+          }
+
+          .dates {
+            .date {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              p {
+                margin: 0;
+                color: var(--gray-600);
+                font-size: var(--size-20);
+              }
+
+              .icon_container {
+                svg {
+                  color: var(--main-blue);
+                }
+              }
+            }
+
+            .time {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .time_container {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .icon_container {
+                  svg {
+                    color: var(--main-blue);
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+
+                p {
+                  margin: 0;
+                  color: var(--gray-600);
+                  font-size: var(--size-20);
+                }
+              }
+
+              .is_online {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                .icon_container {
+                  svg {
+                    color: var(--main-blue);
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+
+                p {
+                  margin: 0;
+                  color: var(--gray-600);
+                  font-size: var(--size-20);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .box.active {
+        .img_contaienr {
+          .lists {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            display: block;
+            z-index: 99;
+            background: #1ea0cb9a;
+            opacity: 1;
+            padding-right: 24px;
+            display: flex !important;
+            padding-bottom: 24px;
+            .list_container {
+              margin-top: auto;
+              color: var(--main-white);
+
+              .list_title {
+                text-align: right;
+
+                p {
+                  margin: 0;
+                  font-size: var(--size-32);
+                  font-weight: var(--meduim);
+                }
+              }
+
+              .list {
+                display: flex;
+                align-items: center;
+                gap: 0px;
+                .icon_container {
+                  svg {
+                    width: 24px;
+                    height: 24px;
+                  }
+                }
+
+                p {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .btn_container {
+      margin-top: 60px;
+      text-align: center;
+      button {
+        border: none;
+        padding: 20px 0px;
+
+        font-size: var(--size-32);
+        font-weight: var(--meduim);
+        color: var(--main-blue);
+        border-radius: 8px;
+        width: 357px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -6,6 +6,9 @@ import WhoWeAre from "@/components/Home/WhoWeAre";
 import OurGoals from "@/components/Home/OurGoals";
 import OurNews from "@/components/Home/OurNews";
 import Trainings from "@/components/Home/Trainings";
+import Partners from "@/components/Home/Partners";
+import Web from "@/components/Home/Web";
+import Contacts from "@/components/Home/Contacts";
 
 const Effra = localFont({
   src: [
@@ -45,6 +48,7 @@ export default function Home({ dataNews, dataTrainings }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main style={combinedStyles} dir="rtl">
         <Navbar />
         <Hero />
@@ -52,6 +56,9 @@ export default function Home({ dataNews, dataTrainings }) {
         <OurGoals />
         <OurNews dataNews={dataNews} />
         <Trainings dataTrainings={dataTrainings} />
+        <Partners />
+        <Web />
+        <Contacts />
       </main>
     </>
   );

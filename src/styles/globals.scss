@@ -22,6 +22,8 @@
   --size-38: 38px;
   --size-32: 32px;
   --size-36: 36px;
+  --size-16: 16px;
+  --size-72: 72px;
 }
 
 * {
@@ -54,6 +56,9 @@ a {
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
+    padding-bottom: 44px;
+
     .left_arrow,
     .right_arrow {
       background-color: var(--main-blue);
@@ -63,7 +68,7 @@ a {
       display: flex;
       transition: all 0.3s ease-in-out;
       position: absolute;
-      bottom: -40px;
+      bottom: 0px;
       svg {
         width: 30.5px;
         height: 29px;
