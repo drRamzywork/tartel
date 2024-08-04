@@ -4,6 +4,11 @@ section.trainings {
   padding-bottom: 60px;
   margin-top: 100px;
 
+  user-select: none;
+  * {
+    user-select: none;
+  }
+
   .sec_title {
     display: flex;
     gap: 12px;

@@ -88,18 +88,13 @@ const Trainings = ({ }) => {
 
         <div className={styles.swiper_container}>
           <Swiper
-            slidesPerView={2.7}
+            slidesPerView={3.1}
             pagination={{ clickable: true }}
             dir="rtl"
-            modules={[Navigation, FreeMode]}
             initialSlide={1}
             onSwiper={(swiper) => swiperRef.current = swiper}
             onSlideChange={handleSlideChange}
             className={styles.swiper_contain}
-            navigation={{
-              prevEl: '.left_arrow',
-              nextEl: '.right_arrow',
-            }}
             centeredSlides={true}
           >
             {dataTrainings?.map((box, index) => (
@@ -169,10 +164,8 @@ const Trainings = ({ }) => {
 
 
                 </div>
-
               </SwiperSlide>
             ))}
-
           </Swiper>
         </div>
 
