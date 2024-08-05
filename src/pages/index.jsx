@@ -43,7 +43,6 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
 
   const imagePath = `assets/imgs/favicon.png`;
 
-  console.log(dataImages, "dataImages")
   return (
     <>
       <Head>

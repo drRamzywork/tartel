@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 
 const WhoWeAre = ({ who_we_are, our_messages }) => {
 
-  console.log(who_we_are)
   return (
     <section className={styles.who_we_are} id='who_we_are'>
 
