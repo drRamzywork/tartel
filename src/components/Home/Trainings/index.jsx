@@ -72,6 +72,28 @@ const Trainings = ({ }) => {
   ]
 
 
+  const breakpoints = {
+    320: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 2.1,
+    },
+    1024: {
+      slidesPerView: 2.1,
+    },
+    1366: {
+      slidesPerView: 2.5,
+    },
+    1920: {
+      slidesPerView: 3.1,
+    },
+
+  }
+
   return (
     <section id='trainings' className={styles.trainings}>
       <div className={styles.section_container}>
@@ -88,7 +110,6 @@ const Trainings = ({ }) => {
 
         <div className={styles.swiper_container}>
           <Swiper
-            slidesPerView={3.1}
             pagination={{ clickable: true }}
             dir="rtl"
             initialSlide={1}
@@ -96,6 +117,8 @@ const Trainings = ({ }) => {
             onSlideChange={handleSlideChange}
             className={styles.swiper_contain}
             centeredSlides={true}
+
+            breakpoints={breakpoints}
           >
             {dataTrainings?.map((box, index) => (
               <SwiperSlide key={index} >

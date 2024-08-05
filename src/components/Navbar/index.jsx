@@ -74,30 +74,31 @@ const Navbar = () => {
                     </Link>
 
                   </li>
+
                   <li>
-                    <Link href={'#'}>
+                    <Link href={'#our_news'}>
                       أخبارنا وفعاليتنا
                     </Link>
                   </li>
-                  <li>
 
-                    <Link href={'#'}>
+                  <li>
+                    <Link href={'#trainings'}>
                       الدورات
                     </Link>
-
                   </li>
+
                   <li>
                     <Link href={'#'}>
                       المتجر الإلكتروني
                     </Link>
 
                   </li>
+
                   <li>
                     <Link href={'#'}>
                       المقرأه الالكترونية
                     </Link>
                   </li>
-
 
                   <li className={styles.menu}>
                     <a >
@@ -105,23 +106,23 @@ const Navbar = () => {
                         التعليم
                       </p>
                     </a>
-                    <IoIosArrowDown />
 
+                    <IoIosArrowDown />
                     <ul className={styles.drop_down}>
 
                       <li>
                         <Link href={'/learn'}>
                           التعليم النسائي
                         </Link>
-
-
                       </li>
+
                       <li>
                         <Link href={'/learn'}>
                           تعليم الأطفال
                         </Link>
 
                       </li>
+
                       <li>
                         <Link href={'/learn'}>
                           الخطط الدراسية
@@ -135,8 +136,8 @@ const Navbar = () => {
                         </Link>
                       </li>
                     </ul>
-                  </li>
 
+                  </li>
 
 
                   <li className={styles.menu}>

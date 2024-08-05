@@ -9,6 +9,7 @@ import Trainings from "@/components/Home/Trainings";
 import Partners from "@/components/Home/Partners";
 import Web from "@/components/Home/Web";
 import Contacts from "@/components/Home/Contacts";
+import Footer from "@/components/Footer";
 
 const Effra = localFont({
   src: [
@@ -59,6 +60,7 @@ export default function Home({ dataNews, dataTrainings }) {
         <Partners />
         <Web />
         <Contacts />
+        <Footer />
       </main>
     </>
   );

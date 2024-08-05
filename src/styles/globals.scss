@@ -28,6 +28,11 @@
   --size-72: 72px;
 }
 
+::selection {
+  background: var(--main-blue);
+  color: white; /* Optional: set the color of the text */
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -71,6 +76,7 @@ a {
       transition: all 0.3s ease-in-out;
       position: absolute;
       bottom: 0px;
+      cursor: pointer;
       svg {
         width: 30.5px;
         height: 29px;

@@ -24,8 +24,9 @@ section.contact {
   .boxes_container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 25px;
+    margin-bottom: 60px;
 
     .box {
       width: 357px;
@@ -43,7 +44,7 @@ section.contact {
       &::after {
         content: "";
         position: absolute;
-        top: -138px;
+        top: -113px;
         right: 0;
         height: 100%;
         width: 100%;
@@ -90,19 +91,68 @@ section.contact {
   }
 
   .form_section_container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 24px;
+
     form {
+      width: 641px;
       .input_container {
+        position: relative;
+        width: 100%;
+        margin-bottom: 12px;
+        textarea,
         input {
+          width: 100%;
+          padding-right: 48px;
+
+          border-radius: 8px;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          border: none;
+          background-color: #e2f6f9;
+
+          &:focus {
+            border: none;
+            box-shadow: none;
+          }
         }
+
+        textarea {
+          height: 173px;
+        }
+
         .icon_container {
+          position: absolute;
+          top: 12px;
+          right: 15px;
           svg {
           }
         }
       }
     }
 
+    .send_btn {
+      margin-top: 32px;
+
+      button {
+        color: var(--main-white);
+        border: none;
+        background-color: var(--main-blue);
+        text-align: center;
+        font-size: var(--size-32);
+        border-radius: 8px;
+        padding: 12px 20px;
+        width: 357px;
+      }
+    }
+
     .map_container {
       img {
+        width: 455px;
+        height: 440px;
+        opacity: 0px;
       }
     }
   }

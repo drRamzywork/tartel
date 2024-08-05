@@ -114,7 +114,7 @@ const Contacts = () => {
               <textarea name="" placeholder='رسالتك' id=""></textarea>
             </div>
 
-            <div className="send_btn">
+            <div className={styles.send_btn}>
               <button type='send'>ارسل رسالتك</button>
             </div>
           </form>
