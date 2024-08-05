@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Maps API Key Test</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0fUYASQXlqfp1d5EFSIT7_0lg0_OIxq0"></script>
+    <script>
+      function initMap() {
+        var mapCenter = { lat: 24.7136, lng: 46.6753 };
+        var map = new google.maps.Map(document.getElementById("map"), {
+          center: mapCenter,
+          zoom: 15,
+        });
+        var marker = new google.maps.Marker({
+          position: mapCenter,
+          map: map,
+        });
+      }
+      window.onload = initMap;
+    </script>
+    <style>
+      #map {
+        height: 100vh;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>

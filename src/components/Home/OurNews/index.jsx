@@ -6,6 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from './index.module.scss'
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
+import { motion } from 'framer-motion';
 
 const OurNews = ({ dataNews }) => {
   const swiperRef = useRef(null);
@@ -20,13 +21,7 @@ const OurNews = ({ dataNews }) => {
     setActiveSlide(index);
   };
 
-  // const handleSectionClick = (index) => {
-  //   setActiveSection(index);
-  //   setActiveSlide(index);
-  //   if (swiperRef.current) {
-  //     swiperRef.current.slideTo(index);
-  //   }
-  // };
+
 
   return (
     <>
@@ -35,18 +30,27 @@ const OurNews = ({ dataNews }) => {
 
           <div className={styles.section_container}>
             <div className={styles.text_container}>
-              <div className={styles.title}>
+              <motion.div initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, type: "tween" }} className={styles.title}>
                 <h1>أخبارنا و فعاليتنا </h1>
                 <div className={styles.circle}>
                   <img src="/assets/svgs/circles.svg" alt="" />
                 </div>
-              </div>
+              </motion.div>
             </div>
 
 
 
             <div className={styles.swiper_container}>
-              <div className={styles.active_slider}>
+              <motion.div
+                key={activeSlide}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+
+                className={styles.active_slider}>
                 <div className={styles.img_container}>
 
                   <img src={dataNews[activeSlide]?.image} alt="" />
@@ -63,7 +67,7 @@ const OurNews = ({ dataNews }) => {
                   </div>
                 </div>
 
-              </div>
+              </motion.div>
 
 
               <div className={styles.swiper} id='swiper'>

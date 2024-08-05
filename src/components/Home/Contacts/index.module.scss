@@ -24,7 +24,7 @@ section.contact {
   .boxes_container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 25px;
     margin-bottom: 60px;
 
@@ -149,9 +149,11 @@ section.contact {
     }
 
     .map_container {
+      width: 50%;
+      height: 440px;
+
+      border-radius: 12px;
       img {
-        width: 455px;
-        height: 440px;
         opacity: 0px;
       }
     }

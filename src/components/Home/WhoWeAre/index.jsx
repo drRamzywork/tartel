@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './index.module.scss'
+import { motion } from 'framer-motion'
 
 
-const WhoWeAre = () => {
+const WhoWeAre = ({ who_we_are, our_messages }) => {
+
+  console.log(who_we_are)
   return (
     <section className={styles.who_we_are} id='who_we_are'>
 
@@ -16,7 +19,9 @@ const WhoWeAre = () => {
         <div className={styles.section_container}>
 
           <div className={styles.text_container}>
-            <div className={styles.main_section_title}>
+            <motion.div initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, type: "tween" }} className={styles.main_section_title}>
               <div className={styles.title}>
                 <h1>
                   من نحن
@@ -26,58 +31,70 @@ const WhoWeAre = () => {
               <div className={styles.icon_container}>
                 <img src="/assets/svgs/sections_shape.svg" alt="" />
               </div>
-            </div>
+            </motion.div>
 
-            <div className={styles.sec_title}>
+            <motion.div initial={{ opacity: 0, }}
+              whileInView={{ opacity: 1, }}
+              transition={{ duration: 1.5, type: "tween" }} className={styles.sec_title}>
               <div className={styles.title}>
                 <h1>مرحبا بك في مركز ترتيل</h1>
               </div>
-            </div>
+            </motion.div>
 
             <div className={styles.main_desc}>
               <p>مركز "ترتيل" هو وقف تأسس في المملكة العربية السعودية، تحديدًا بمحافظة الخرج، في عام 1444هـ. مرخص من الهيئة العامة للأوقاف برقم (4122)</p>
             </div>
 
             <div className={styles.our_vision}>
-              <div className={styles.title}>
+              <motion.div initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, type: "tween" }} className={styles.title}>
                 <h2>رؤيتنا</h2>
-              </div>
+              </motion.div>
 
 
-              <div className={styles.desc}>
+              <motion.div initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, type: "tween" }} className={styles.desc}>
                 <p>أن يكون مركز ترتيل مركزًا تعليميًا تربويًا رائدًا في إعداد معلمات القرآن الكريم، من خلال تقديم برامج تعليمية متميزة تركز على الجودة والكفاءة في المخرجات التعليمية، وتطوير مهارات المعلمات في تعليم القرآن الكريم، وذلك للمساهمة في نشر وتعزيز تعليم القرآن الكريم بأعلى المستويات في جميع أنحاء العالم.</p>
-              </div>
+              </motion.div>
 
-              <div className={styles.join_us_btn}>
+              <motion.div initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, type: "tween" }} className={styles.join_us_btn}>
                 <button>انضم الى عائلتنا</button>
-              </div>
+              </motion.div>
             </div>
 
 
           </div>
 
-          <div className={styles.sec_img_container}>
+          <motion.div initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, type: "tween" }} className={styles.sec_img_container}>
             <div className={styles.main_img_bg}>
               <img src="/assets/svgs/dots_bg.svg" alt="" />
 
             </div>
             <div className={styles.main_image_container}>
-              <img className={styles.main_image} src="/assets/imgs/quran.jpeg" alt="" />
+              <img className={styles.main_image} src={who_we_are.image} alt="" />
               <div className={styles.sticker}>
                 <div className={styles.shape}>
                   <img src="/assets/svgs/star.svg" alt="" />
                 </div>
 
-                <p>
+                <p >
                   <span>مركز</span>
                   نسائي
-                </p>
+                </p >
+
+
 
               </div>
             </div>
 
 
-          </div>
+          </motion.div>
 
 
 
@@ -99,20 +116,24 @@ const WhoWeAre = () => {
             </div>
 
             <div className={styles.img_container}>
-              <img src="/assets/imgs/quran2.jpeg" alt="" />
+              <img src={our_messages.image} alt={our_messages.name} />
             </div>
 
 
             <div className={styles.text_contaienr}>
 
-              <div className={styles.title}>
+              <motion.div initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, type: "tween" }} className={styles.title}>
                 <h2>رسالتنا</h2>
-              </div>
+              </motion.div>
 
-              <div className={styles.desc}>
+              <motion.div initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, type: "tween" }} className={styles.desc}>
                 <p>تعليم القرآن الكريم على الوجه الصحيح لجميع المسلمين والمسلمات من جميع أنحاء العالم حفظًا وتلاوةً عبر مراكز متخصصة وبيئات محفزة وفق معايير التميز المؤسسي في العمل الخيري.</p>
 
-              </div>
+              </motion.div>
             </div>
 
           </div>

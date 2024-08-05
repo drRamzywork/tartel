@@ -50,6 +50,7 @@ section.trainings {
           border-radius: 8px;
           position: relative;
           overflow: hidden;
+          max-height: 340px;
           .lists {
             display: none !important;
             .list_title {
@@ -163,6 +164,7 @@ section.trainings {
       }
 
       .box.active {
+        background-color: #ffffffd6;
         .img_contaienr {
           .lists {
             position: absolute;

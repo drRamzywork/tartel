@@ -36,13 +36,14 @@ const Effra = localFont({
   ],
 });
 
-export default function Home({ dataNews, dataTrainings }) {
+export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, partners, dataImages }) {
   const combinedStyles = {
     ...Effra.style,
   };
 
   const imagePath = `assets/imgs/favicon.png`;
 
+  console.log(dataImages, "dataImages")
   return (
     <>
       <Head>
@@ -96,13 +97,14 @@ export default function Home({ dataNews, dataTrainings }) {
 
       <main style={combinedStyles} dir="rtl">
         <Navbar />
-        <Hero />
-        <WhoWeAre />
-        <OurGoals />
+        <Hero hero_image={dataImages.hero_image} />
+        <WhoWeAre who_we_are={dataImages.who_we_are} our_messages={dataImages.our_messages}
+        />
+        <OurGoals dataGoals={dataGoals} goals_desc={goals_desc} />
         <OurNews dataNews={dataNews} />
         <Trainings dataTrainings={dataTrainings} />
-        <Partners />
-        <Web />
+        <Partners partners={partners} />
+        <Web electronic_reading={dataImages.electronic_reading} />
         <Contacts />
         <Footer />
       </main>
@@ -113,20 +115,32 @@ export default function Home({ dataNews, dataTrainings }) {
 // https://api.tarteel.org.sa/api/news
 
 export async function getStaticProps() {
+  const url = 'https://api.tarteel.org.sa/api'
 
-  const resNews = await fetch('https://api.tarteel.org.sa/api/news')
+  const resNews = await fetch(`${url}/news`)
   const dataNews = await resNews.json();
 
 
 
-  const resTrainings = await fetch('https://api.tarteel.org.sa/api/home-page')
+  const resHomePage = await fetch(`${url}/home-page`)
+  const dataHomePage = await resHomePage.json();
+
+  const resTrainings = await fetch(`${url}/trainings`)
   const dataTrainings = await resTrainings.json();
+
+  const resImages = await fetch(`${url}/images`)
+  const dataImages = await resImages.json();
 
 
   return {
     props: {
       dataNews: dataNews?.data,
-      dataTrainings: dataTrainings?.data?.counter?.courses
+
+      dataGoals: dataHomePage?.data?.goals,
+      goals_desc: dataHomePage?.data?.goals_desc,
+      partners: dataHomePage?.data?.partners,
+      dataTrainings: dataTrainings?.data,
+      dataImages: dataImages?.data
 
     },
     revalidate: 10

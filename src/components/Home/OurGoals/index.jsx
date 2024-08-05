@@ -1,6 +1,8 @@
 import React from 'react'
-import styles from './index.module.scss'
-const OurGoals = () => {
+import styles from './index.module.scss';
+import { motion } from 'framer-motion';
+
+const OurGoals = ({ dataGoals, goals_desc }) => {
   return (
     <section id='our_goals' className={styles.our_goals}>
       <div className={styles.goals_bg}>
@@ -12,87 +14,40 @@ const OurGoals = () => {
         <div className={styles.sec_container}>
 
           <div className={styles.text_container}>
-            <div className={styles.title}>
+
+            <motion.div initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, type: "tween" }} className={styles.title}>
               <h1>أهدافنا</h1>
-            </div>
-            <div className={styles.desc}>
-              <p>نسعى في "مركز ترتيل" مع نخبة من المتخصصين المجازين إلى تيسير حفظ القرآن الكريم وضبطه، وإتقان قواعده وأحكامه، وتعليمه على الوجه الصحيح، لجميع المسلمين في شتى أنحاء العالم وتأهيل المعلمين لتعليم القرآن بطرق صحيحة ومبتكرة لجميع المسلمين.</p>
-            </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, type: "tween" }} className={styles.desc}>
+              <p>
+                {goals_desc}
+              </p>
+            </motion.div>
           </div>
 
           <div className={styles.goals_container}>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
 
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
 
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
 
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
 
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
-
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
-
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
-
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
-            <div className={styles.goal}>
-              <div className={styles.icon_container}>
-                <img src="/assets/svgs/checkd.svg" alt="" />
-              </div>
-
-              <div className={styles.title}>
-                <p>تصحيح تلاوة القرآن الكريم و حفظه. </p>
-              </div>
-            </div>
+            {Object.keys(dataGoals).map((key, index) => (
+              <motion.div initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, type: "tween" }}
+                key={index} className={styles.goal}>
+                <div className={styles.icon_container}>
+                  <img src="/assets/svgs/checkd.svg" alt="" />
+                </div>
+                <div className={styles.title}>
+                  <p>{dataGoals[key]}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
         </div>

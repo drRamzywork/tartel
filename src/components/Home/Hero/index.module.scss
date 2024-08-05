@@ -45,7 +45,8 @@ section.hero {
       background-color: var(--main-blue);
 
       img {
-        width: 1222px;
+        width: 1162px;
+
         height: 160%;
         object-fit: cover;
         opacity: 0.1;
@@ -54,6 +55,10 @@ section.hero {
         top: 0;
         right: -6px;
         transform: scale(1.4) rotate(335deg);
+
+        @media screen and (min-width: 1820px) {
+          width: 1222px;
+        }
       }
 
       .bg2 {

@@ -2,13 +2,16 @@ import React from 'react'
 import styles from './index.module.scss'
 import Link from 'next/link'
 import { IoIosArrowDown } from 'react-icons/io'
+import { motion } from 'framer-motion'
 
 const Footer = () => {
   return (
     <footer id='footer' className={styles.footer}>
-      <div className={styles.img_container}>
+      <motion.div initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, type: "tween" }} className={styles.img_container}>
         <img src="/assets/svgs/mosque.svg" alt="" />
-      </div>
+      </motion.div>
 
 
 

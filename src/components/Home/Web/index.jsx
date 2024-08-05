@@ -1,14 +1,18 @@
 import React from 'react'
 import styles from './index.module.scss';
+import { motion } from 'framer-motion';
 
-const Web = () => {
+
+const Web = ({ electronic_reading }) => {
   return (
     <>
       <section id='web' className={styles.web}>
         <div className={styles.img_container}>
-          <img src="/assets/imgs/masjd.jpeg" alt="" />
+          <img src={electronic_reading.image} alt="" />
         </div>
-        <div className="container">
+        <motion.div initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, type: "tween" }} className="container">
           <div className={styles.section_container}>
             <div className={styles.sec_title}>
               <h1>المتجر الالكتروني</h1>
@@ -28,7 +32,7 @@ const Web = () => {
 
 
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   )

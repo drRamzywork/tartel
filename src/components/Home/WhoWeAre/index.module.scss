@@ -20,7 +20,7 @@ section.who_we_are {
   }
 
   .section_container {
-    margin-top: 169px;
+    margin-top: 84px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -124,7 +124,7 @@ section.who_we_are {
         height: 480px;
         overflow: hidden;
         position: relative;
-
+        border-radius: 12px;
         .main_image {
           width: 100%;
           height: 100%;
@@ -176,7 +176,7 @@ section.who_we_are {
       position: relative;
       .main_img_bg_bottom {
         position: absolute;
-        top: -100px;
+        top: -30px;
         right: 120px;
         width: 221px;
         height: 219px;

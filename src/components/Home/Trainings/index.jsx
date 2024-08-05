@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, FreeMode } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -8,9 +7,9 @@ import styles from './index.module.scss'
 import { IoCalendarSharp } from "react-icons/io5";
 import { IoMdAlarm, IoIosCheckmark } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
+import { motion } from 'framer-motion';
 
-
-const Trainings = ({ }) => {
+const Trainings = ({ dataTrainings }) => {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -22,54 +21,6 @@ const Trainings = ({ }) => {
     swiperRef?.current?.slideTo(index);
     setActiveSlide(index);
   };
-
-  const dataTrainings = [
-    {
-      title: 'دورة تحفيظ القرآن',
-      lists: ['اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها'],
-      date: '٢٢ يوليو ٢٠٢٤',
-      time: '٠٦:٠٠ صباحا : ١٢:٠٠ ظهرا',
-      isOnline: true,
-      duration: 'شهر',
-      img: '/assets/imgs/takreem.jpeg'
-    },
-    {
-      title: 'دورة تحفيظ القرآن',
-      lists: ['اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها'],
-      date: '٢٢ يوليو ٢٠٢٤',
-      time: '٠٦:٠٠ صباحا : ١٢:٠٠ ظهرا',
-      isOnline: true,
-      duration: 'شهر',
-      img: '/assets/imgs/takreem.jpeg'
-    },
-    {
-      title: 'دورة تحفيظ القرآن',
-      lists: ['اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها'],
-      date: '٢٢ يوليو ٢٠٢٤',
-      time: '٠٦:٠٠ صباحا : ١٢:٠٠ ظهرا',
-      isOnline: true,
-      duration: 'شهر',
-      img: '/assets/imgs/takreem.jpeg'
-    },
-    {
-      title: 'دورة تحفيظ القرآن',
-      lists: ['اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها'],
-      date: '٢٢ يوليو ٢٠٢٤',
-      time: '٠٦:٠٠ صباحا : ١٢:٠٠ ظهرا',
-      isOnline: true,
-      duration: 'شهر',
-      img: '/assets/imgs/takreem.jpeg'
-    },
-    {
-      title: 'دورة تحفيظ القرآن',
-      lists: ['اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها', 'اعداد الدروس و تحضيرها'],
-      date: '٢٢ يوليو ٢٠٢٤',
-      time: '٠٦:٠٠ صباحا : ١٢:٠٠ ظهرا',
-      isOnline: true,
-      duration: 'شهر',
-      img: '/assets/imgs/takreem.jpeg'
-    },
-  ]
 
 
   const breakpoints = {
@@ -98,14 +49,16 @@ const Trainings = ({ }) => {
     <section id='trainings' className={styles.trainings}>
       <div className={styles.section_container}>
         <div className="container">
-          <div className={styles.sec_title}>
+          <motion.div initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, type: "tween" }} className={styles.sec_title}>
             <h1>دورات تدريبية تبدأ قريبا</h1>
 
             <div className={styles.img_container}>
               <img src="/assets/svgs/title_icon.svg" alt="" />
             </div>
 
-          </div>
+          </motion.div>
         </div>
 
         <div className={styles.swiper_container}>
@@ -124,7 +77,7 @@ const Trainings = ({ }) => {
               <SwiperSlide key={index} >
                 <div onClick={() => handleSlideClick(index)} className={`${styles.box} ${activeSlide === index ? styles.active : ''}`}>
                   <div className={styles.img_contaienr}>
-                    <img src={box.img} alt="" />
+                    <img src={box.image} alt="" />
 
                     <div className={styles.lists}>
                       <div className={styles.list_container}>
@@ -132,8 +85,8 @@ const Trainings = ({ }) => {
                         <div className={styles.list_title}>
                           <p>تشمل الدورة المحاور الآتية :-</p>
                         </div>
-                        {box.lists.map((list, idx) =>
-                          < div className={styles.list}>
+                        {box.topics.map((list, idx) =>
+                          < div className={styles.list} key={idx}>
                             <div className={styles.icon_container}>
                               <IoIosCheckmark />
                             </div>
@@ -151,36 +104,52 @@ const Trainings = ({ }) => {
                       <div className={styles.title}>
                         <p>{box.title}</p>
                       </div>
-                      <div className={styles.duration}>
-                        ({box.duration})
-                      </div>
+
+                      {box.duration &&
+                        <div className={styles.duration}>
+                          ({box.duration})
+                        </div>
+                      }
                     </div>
 
                     <div className={styles.dates}>
-                      <div className={styles.date}>
-                        <div className={styles.icon_container}>
-                          <IoCalendarSharp />
+                      {box.date &&
+                        <div className={styles.date}>
+                          <div className={styles.icon_container}>
+                            <IoCalendarSharp />
+                          </div>
+                          <p>{box.date}</p>
                         </div>
-                        <p>{box.date}</p>
-                      </div>
-
+                      }
                       <div className={styles.time}>
-                        <div className={styles.time_container}>
-                          <div className={styles.icon_container}>
-                            <IoMdAlarm />
+                        {box.time &&
+                          <div className={styles.time_container}>
+                            <div className={styles.icon_container}>
+                              <IoMdAlarm />
+                            </div>
+                            <p>{box.time}</p>
                           </div>
-                          <p>{box.time}</p>
+                        }
 
+                        {box.is_online ?
+                          <div className={styles.is_online}>
 
-                        </div>
-
-                        <div className={styles.is_online}>
-
-                          <div className={styles.icon_container}>
-                            <MdLocationOn />
+                            <div className={styles.icon_container}>
+                              <MdLocationOn />
+                            </div>
+                            <p>تدريب اونلاين</p>
                           </div>
-                          <p>تدريب اونلاين</p>
-                        </div>
+
+                          :
+                          <div className={styles.is_online}>
+
+                            <div className={styles.icon_container}>
+                              <MdLocationOn />
+                            </div>
+                            <p>تدريب في المركز</p>
+                          </div>
+                        }
+
                       </div>
                     </div>
                   </div>
