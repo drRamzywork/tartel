@@ -40,7 +40,12 @@ section.trainings {
         width: 540px;
         border-radius: 8px;
         overflow: hidden;
+        cursor: pointer;
 
+        transition: all 0.3s ease-in-out;
+        * {
+          transition: all 0.3s ease-in-out;
+        }
         .img_contaienr {
           border-radius: 8px;
           position: relative;
@@ -57,6 +62,8 @@ section.trainings {
               }
 
               p {
+                margin: 0;
+                font-size: var(--size-20);
               }
             }
           }
