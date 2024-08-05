@@ -62,7 +62,7 @@ export default function Home({ dataNews, dataTrainings }) {
         <link rel="apple-touch-icon" href={`https://tartel.vercel.app/${imagePath}`} />
         <link rel="apple-touch-startup-image" href={`https://tartel.vercel.app/${imagePath}`} />
         <meta name="author" content="ترتيل | لتعليم القرآن الكريم" />
-        <meta name="description" content={metaData?.description} />
+        <meta name="description" content={'تعليم القرآن الكريم على الوجه الصحيح لجميع المسلمين والمسلمات من جميع أنحاء العالم حفظًا وتلاوةً عبر مراكز متخصصة وبيئات محفزة وفق معايير التميز المؤسسي في العمل الخيري.'} />
         <link rel="canonical" href={`https://tartel.vercel.app/`} />
         <meta name="msapplication-TileColor" content="#005d85" />
         <meta name="msapplication-TileImage" content={`https://tartel.vercel.app/${imagePath}`} />
@@ -78,19 +78,19 @@ export default function Home({ dataNews, dataTrainings }) {
         <meta property="og:locale:alternate" content="ar" />
         <meta property="og:url" content={`https://tartel.vercel.app/`} />
         <meta property="og:title" content="ترتيل | لتعليم القرآن الكريم" />
-        <meta property="og:description" content={metaData?.description} />
+        <meta property="og:description" content={'تعليم القرآن الكريم على الوجه الصحيح لجميع المسلمين والمسلمات من جميع أنحاء العالم حفظًا وتلاوةً عبر مراكز متخصصة وبيئات محفزة وفق معايير التميز المؤسسي في العمل الخيري.'} />
         <meta property="og:image" content={`https://tartel.vercel.app/${imagePath}`} />
         <meta itemProp="name" content="ترتيل | لتعليم القرآن الكريم" />
         <meta itemProp="author" content="ترتيل | لتعليم القرآن الكريم" />
         <meta itemProp="image" content={`https://tartel.vercel.app/${imagePath}`} />
-        <meta itemProp="description" content={metaData?.description} />
+        <meta itemProp="description" content={'تعليم القرآن الكريم على الوجه الصحيح لجميع المسلمين والمسلمات من جميع أنحاء العالم حفظًا وتلاوةً عبر مراكز متخصصة وبيئات محفزة وفق معايير التميز المؤسسي في العمل الخيري.'} />
         <meta name="twitter:image" content={`https://tartel.vercel.app/${imagePath}`} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@" />
         <meta name="twitter:creator" content="@" />
         <meta name="twitter:title" content="ترتيل | لتعليم القرآن الكريم" />
         <meta name="twitter:image:src" content={`https://tartel.vercel.app/${imagePath}`} />
-        <meta name="twitter:description" content={metaData?.description} />
+        <meta name="twitter:description" content={'تعليم القرآن الكريم على الوجه الصحيح لجميع المسلمين والمسلمات من جميع أنحاء العالم حفظًا وتلاوةً عبر مراكز متخصصة وبيئات محفزة وفق معايير التميز المؤسسي في العمل الخيري.'} />
       </Head>
 
 
