@@ -32,7 +32,11 @@
   background: var(--main-blue);
   color: white; /* Optional: set the color of the text */
 }
-
+.active {
+  * {
+    color: var(--sec-blue) !important;
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;

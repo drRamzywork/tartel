@@ -195,6 +195,8 @@ nav.navbar {
             color: var(--main-black);
             font-size: var(--size-20);
             font-weight: var(--meduim);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
           }
 
           ul.drop_down:not(.active) {
