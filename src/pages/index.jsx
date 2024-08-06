@@ -63,7 +63,7 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
         <link rel="apple-touch-startup-image" href={`https://tartel.vercel.app/${imagePath}`} />
         <meta name="author" content="ترتيل | لتعليم القرآن الكريم" />
         <meta name="description" content={'تعليم القرآن الكريم على الوجه الصحيح لجميع المسلمين والمسلمات من جميع أنحاء العالم حفظًا وتلاوةً عبر مراكز متخصصة وبيئات محفزة وفق معايير التميز المؤسسي في العمل الخيري.'} />
-        <link rel="canonical" href={`https://tartel.vercel.app/`} />
+        <link rel="canonical" href={`https://tarteel.org.sa/`} />
         <meta name="msapplication-TileColor" content="#005d85" />
         <meta name="msapplication-TileImage" content={`https://tartel.vercel.app/${imagePath}`} />
         <meta name="msapplication-square70x70logo" content={imagePath} />
@@ -76,7 +76,7 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
         <meta property="og:site_name" content="ترتيل | لتعليم القرآن الكريم" />
         <meta property="og:locale" content="ar" />
         <meta property="og:locale:alternate" content="ar" />
-        <meta property="og:url" content={`https://tartel.vercel.app/`} />
+        <meta property="og:url" content={`https://tarteel.org.sa/`} />
         <meta property="og:title" content="ترتيل | لتعليم القرآن الكريم" />
         <meta property="og:description" content={'تعليم القرآن الكريم على الوجه الصحيح لجميع المسلمين والمسلمات من جميع أنحاء العالم حفظًا وتلاوةً عبر مراكز متخصصة وبيئات محفزة وفق معايير التميز المؤسسي في العمل الخيري.'} />
         <meta property="og:image" content={`https://tartel.vercel.app/${imagePath}`} />
