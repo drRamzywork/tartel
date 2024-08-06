@@ -388,8 +388,7 @@ import Image from 'next/image';
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-
-const Navbar = () => {
+const Navbar = ({ dataImages }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
   const router = useRouter();
@@ -458,8 +457,8 @@ const Navbar = () => {
             <div className={styles.join_us}>
               <button>
                 <Image src={'/assets/svgs/account_circle.svg'} width={20} height={20} />
-                <Link href={'#'}>
-                  انضم الى عائلتنا
+                <Link href={`${dataImages.items.hero_btn.text}`}>
+                  {dataImages.items.hero_btn.name}
                 </Link>
               </button>
             </div>

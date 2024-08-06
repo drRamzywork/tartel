@@ -19,19 +19,19 @@ const options = {
   zoomControl: true,
 };
 
-const Map = () => {
+const Map = ({ dataImages }) => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: 'AIzaSyC0fUYASQXlqfp1d5EFSIT7_0lg0_OIxq0',
   });
 
   const mapCenter = {
-    lat: 24.7136,  // Example coordinates
-    lng: 46.6753,
+    lat: dataImages.items.location_lat.text,  // Example coordinates
+    lng: dataImages.items.location_lng.text,
   };
   const zoomLevel = 15;
 
   const redirectToGoogleMaps = () => {
-    window.open('https://www.google.com/maps/dir/?api=1&destination=24.7136,46.6753', '_blank');
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${dataImages.items.location_lat.text} ,${dataImages.items.location_lng.text}`, '_blank');
   };
 
 

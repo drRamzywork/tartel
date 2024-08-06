@@ -4,7 +4,15 @@ import Link from 'next/link'
 import { IoIosArrowDown } from 'react-icons/io'
 import { motion } from 'framer-motion'
 
-const Footer = () => {
+const Footer = ({ dataImages }) => {
+  const images = dataImages.images;
+  const socialLinks = Object.keys(images)
+    .filter(key => key.startsWith('social_'))
+    .map(key => images[key]);
+
+
+
+
   return (
     <footer id='footer' className={styles.footer}>
       <motion.div initial={{ opacity: 0, y: -40 }}
@@ -144,13 +152,14 @@ const Footer = () => {
 
         <div className={styles.socialmedia_links}>
           <div className={styles.imgs_container}>
-            <img src="/assets/svgs/instagram.svg" alt="" />
-            <img src="/assets/svgs/facebook.svg" alt="" />
-            <img src="/assets/svgs/whatsapp.svg" alt="" />
-            <img src="/assets/svgs/twitter.svg" alt="" />
+            {socialLinks.map((link, index) => (
+              <a key={index} href={link.name} target="_blank" rel="noopener noreferrer">
+                <img src={link.image} alt={link.name} />
+              </a>
+            ))}
           </div>
 
-          <div className={styles.copyrights}>
+          <div className={styles.copyrights} dir='ltr'>
             ©جميع الحقوق محفوظة لوقف ترتيل 2024
           </div>
 

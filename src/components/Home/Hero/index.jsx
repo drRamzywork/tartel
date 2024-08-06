@@ -200,7 +200,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './index.module.scss';
 import useCounter from '@/hooks/useCounter';
-const SequentialAnimations = ({ hero_image }) => {
+import Link from 'next/link';
+const SequentialAnimations = ({ hero_imageData }) => {
   const [currentBox, setCurrentBox] = useState(0);
 
   const boxes = [
@@ -231,7 +232,7 @@ const SequentialAnimations = ({ hero_image }) => {
       <section id='hero' className={styles.hero}>
         <div className={styles.hero_container}>
           <div className={styles.img_container}>
-            <img src={hero_image.image} alt={hero_image.name} />
+            <img src={hero_imageData.images?.hero_image.image} alt={hero_imageData.images?.hero_image.name} />
           </div>
           <div className={styles.content_container}>
             <img src={'/assets/svgs/shape_hero.svg'} alt='' />
@@ -241,19 +242,21 @@ const SequentialAnimations = ({ hero_image }) => {
                 <motion.div initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.5, type: "tween" }} className={styles.title}>
-                  <h1>خيركم من تعلم القرآن وعلمه</h1>
+                  <h1>{hero_imageData?.items?.hero_title?.text}</h1>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 1.5, type: "tween" }}
                   className={styles.desc}>
-                  <p>نسعى في "مركز ترتيل" مع نخبة من المتخصصين المجازين إلى تيسير حفظ القرآن الكريم وضبطه، وإتقان قواعده وأحكامه، وتعليمه على الوجه الصحيح، لجميع المسلمين في شتى أنحاء العالم.</p>
+                  <p>{hero_imageData?.items?.hero_desc?.text}</p>
                 </motion.div>
                 <motion.div className={styles.join_btn} initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.5, type: "tween" }}>
-                  <button>انضم الى عائلتنا</button>
+                  <Link href={`${hero_imageData?.items?.hero_btn?.text}`}>
+                    <button>{hero_imageData?.items?.hero_btn?.name}</button>
+                  </Link>
                 </motion.div>
               </div>
             </div>

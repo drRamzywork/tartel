@@ -81,7 +81,7 @@ const Partners = ({ partners }) => {
               transition={{ duration: 0.5, type: 'tween' }}
               className={styles.logo}
             >
-              <img src={`https://admin.tarteel.org.sa/storage/${partner.image}`} alt={partner.name} />
+              <img src={`${partner.image}`} alt={partner.name} />
             </motion.div>
           ))}
         </div>

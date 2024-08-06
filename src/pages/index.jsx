@@ -45,6 +45,7 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
 
   return (
     <>
+
       <Head>
         <title>ترتيل | لتعليم القرآن الكريم</title>
         <meta charSet="UTF-8" />
@@ -95,18 +96,19 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
 
 
       <main style={combinedStyles} dir="rtl">
-        <Navbar />
-        <Hero hero_image={dataImages.hero_image} />
-        <WhoWeAre who_we_are={dataImages.who_we_are} our_messages={dataImages.our_messages}
+        <Navbar dataImages={dataImages} />
+        <Hero hero_imageData={dataImages} />
+        <WhoWeAre dataImages={dataImages} who_we_are={dataImages?.images?.who_we_are} our_messages={dataImages?.images?.our_messages}
         />
         <OurGoals dataGoals={dataGoals} goals_desc={goals_desc} />
         <OurNews dataNews={dataNews} />
         <Trainings dataTrainings={dataTrainings} />
         <Partners partners={partners} />
-        <Web electronic_reading={dataImages.electronic_reading} />
-        <Contacts />
-        <Footer />
+        <Web electronic_readingData={dataImages} />
+        <Contacts dataImages={dataImages} />
+        <Footer dataImages={dataImages} />
       </main>
+
     </>
   );
 }
@@ -127,7 +129,7 @@ export async function getStaticProps() {
   const resTrainings = await fetch(`${url}/trainings`)
   const dataTrainings = await resTrainings.json();
 
-  const resImages = await fetch(`${url}/images`)
+  const resImages = await fetch(`${url}/general`)
   const dataImages = await resImages.json();
 
 

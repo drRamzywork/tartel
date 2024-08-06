@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './index.module.scss'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 
-const WhoWeAre = ({ who_we_are, our_messages }) => {
+const WhoWeAre = ({ who_we_are, our_messages, dataImages }) => {
 
   return (
     <section className={styles.who_we_are} id='who_we_are'>
@@ -61,7 +62,12 @@ const WhoWeAre = ({ who_we_are, our_messages }) => {
               <motion.div initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, type: "tween" }} className={styles.join_us_btn}>
-                <button>انضم الى عائلتنا</button>
+
+                <button>
+                  <Link href={`${dataImages.items.hero_btn.text}`}>
+                    {dataImages.items.hero_btn.name}
+                  </Link>
+                </button>
               </motion.div>
             </div>
 

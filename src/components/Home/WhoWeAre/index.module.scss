@@ -88,6 +88,10 @@ section.who_we_are {
         }
 
         .join_us_btn {
+          a {
+            color: unset;
+            text-decoration: none;
+          }
           button {
             background-color: var(--main-blue);
             color: var(--main-white);
