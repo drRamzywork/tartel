@@ -45,7 +45,6 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
 
   return (
     <>
-
       <Head>
         <title>ترتيل | لتعليم القرآن الكريم</title>
         <meta charSet="UTF-8" />
@@ -113,15 +112,11 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
   );
 }
 
-// https://api.tarteel.org.sa/api/news
-
 export async function getStaticProps() {
-  const url = 'https://api.tarteel.org.sa/api'
+  const url = 'https://api.tarteel.org.sa/api';
 
-  const resNews = await fetch(`${url}/news`)
+  const resNews = await fetch(`${url}/news`);
   const dataNews = await resNews.json();
-
-
 
   const resHomePage = await fetch(`${url}/home-page`)
   const dataHomePage = await resHomePage.json();
@@ -131,7 +126,6 @@ export async function getStaticProps() {
 
   const resImages = await fetch(`${url}/general`)
   const dataImages = await resImages.json();
-
 
   return {
     props: {
