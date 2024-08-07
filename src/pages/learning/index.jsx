@@ -70,7 +70,7 @@ export async function getStaticProps() {
   const dataAllTopics = await resAllTopics.json();
 
 
-  const resImages = await fetch(`${url}/general`)
+  const resImages = await fetch(`${url}/general`);
   const dataImages = await resImages.json();
 
   return {

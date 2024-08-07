@@ -24,15 +24,19 @@ const Map = ({ dataImages }) => {
     googleMapsApiKey: 'AIzaSyC0fUYASQXlqfp1d5EFSIT7_0lg0_OIxq0',
   });
 
+
+  const lat = Number(dataImages?.items?.location_lat?.text);
+  const lng = Number(dataImages?.items?.location_lng?.text);
   const mapCenter = {
-    lat: dataImages.items.location_lat.text,  // Example coordinates
-    lng: dataImages.items.location_lng.text,
+    lat: lat,
+    lng: lng,
   };
   const zoomLevel = 15;
 
   const redirectToGoogleMaps = () => {
-    window.open(`https://www.google.com/maps/dir/?api=1&destination=${dataImages.items.location_lat.text} ,${dataImages.items.location_lng.text}`, '_blank');
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat} ,${lng}`, '_blank');
   };
+
 
 
   if (!isLoaded) return <div>Loading Maps...</div>;
