@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import styles from './index.module.scss';
+import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 const HeaderPages = ({ mainImg, mainTitle, mainFullDesc }) => {
-
+  const router = useRouter()
 
   return (
     <div id='pages_hero' className={styles.pages_hero}>
@@ -14,7 +16,11 @@ const HeaderPages = ({ mainImg, mainTitle, mainFullDesc }) => {
 
 
         <div className="container ">
-          <div className={styles.text_container}>
+          <motion.div initial={{ opacity: 0, }}
+            whileInView={{ opacity: 1, }}
+            transition={{ duration: 1, type: "tween" }}
+
+            className={`${styles.text_container} ${router.pathname.includes('learning') && styles.text_containerLearn}`}>
             <div className={styles.title}>
               <h1>{mainTitle}</h1>
             </div>
@@ -22,7 +28,7 @@ const HeaderPages = ({ mainImg, mainTitle, mainFullDesc }) => {
             <div className={styles.desc}>
               <p>{mainFullDesc}</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
