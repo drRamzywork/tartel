@@ -43,6 +43,7 @@ const OurGoals = ({ dataGoals, goals_desc }) => {
                 <div className={styles.icon_container}>
                   <img src="/assets/svgs/checkd.svg" alt="" />
                 </div>
+
                 <div className={styles.title}>
                   <p>{dataGoals[key]}</p>
                 </div>

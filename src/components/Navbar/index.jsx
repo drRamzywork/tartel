@@ -131,24 +131,26 @@ const Navbar = ({ dataImages }) => {
                     </a>
                   </li>
                   <li className={activeLink === 'our_news' ? 'active' : ''}>
-                    <a onClick={() => handleClick('#our_news')}>
+                    <a onClick={() => handleClick('/#our_news')}>
                       أخبارنا وفعاليتنا
                     </a>
                   </li>
                   <li className={activeLink === 'trainings' ? 'active' : ''}>
-                    <a onClick={() => handleClick('#trainings')}>
+                    <a onClick={() => handleClick('/#trainings')}>
                       الدورات
                     </a>
                   </li>
                   <li className={activeLink === 'web' ? 'active' : ''}>
-                    <a onClick={() => handleClick('#web')}>
+                    <a onClick={() => handleClick('/#web')}>
                       المتجر الإلكتروني
                     </a>
                   </li>
-                  <li>
-                    <a onClick={() => handleClick('#')}>
-                      المقرأه الالكترونية
-                    </a>
+                  <li className={`${styles.menu} ${router.pathname === '/electronic-reading' && styles.active}`}>
+                    <Link href={'/electronic-reading'} >
+                      <p>
+                        المقرأه الالكترونية
+                      </p>
+                    </Link>
                   </li>
 
                   <li
@@ -191,7 +193,7 @@ const Navbar = ({ dataImages }) => {
                   </li>
 
                   <li>
-                    <a onClick={() => handleClick('#')}>
+                    <a onClick={() => handleClick('/#who_we_are')}>
                       عن المركز
                     </a>
                   </li>

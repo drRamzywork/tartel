@@ -78,6 +78,12 @@
           font-size: var(--size-26);
           font-weight: 400;
           line-height: 32px;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* Number of lines to show */
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
 

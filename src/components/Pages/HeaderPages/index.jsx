@@ -20,7 +20,7 @@ const HeaderPages = ({ mainImg, mainTitle, mainFullDesc }) => {
             whileInView={{ opacity: 1, }}
             transition={{ duration: 1, type: "tween" }}
 
-            className={`${styles.text_container} ${router.pathname.includes('learning') && styles.text_containerLearn}`}>
+            className={`${styles.text_container} ${router.pathname.includes('learning') | router.pathname.includes('electronic-reading') && styles.text_containerLearn}`}>
             <div className={styles.title}>
               <h1>{mainTitle}</h1>
             </div>
