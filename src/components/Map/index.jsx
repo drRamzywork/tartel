@@ -39,7 +39,7 @@ const Map = ({ dataImages }) => {
 
 
 
-  if (!isLoaded) return <div>Loading Maps...</div>;
+  if (!isLoaded) return <div></div>;
 
   return (
     <>
