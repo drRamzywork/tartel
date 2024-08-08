@@ -17,7 +17,7 @@ const DetailsComponents = ({ dataImages, dataDetailsData }) => {
 
   return (
     <>
-      <Navbar dataImages={dataImages} />
+      <Navbar className={true} dataImages={dataImages} />
       <main id={styles.details}>
         <HeaderPages
           mainImg={mainImg}

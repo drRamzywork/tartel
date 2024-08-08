@@ -63,6 +63,9 @@ const NavbarMobile = ({ dataImages }) => {
 
   const menuRef = useRef(null);
 
+
+
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -76,6 +79,20 @@ const NavbarMobile = ({ dataImages }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+
+
+
+  const handleClick = (id) => {
+    if (id.startsWith('#')) {
+      const sectionId = id.substring(1);
+      document.getElementById(sectionId)
+
+      router.push(`#${sectionId}`)
+    } else {
+      router.push(id);
+    }
+  };
 
 
   return (
@@ -172,38 +189,7 @@ const NavbarMobile = ({ dataImages }) => {
             </li>
 
 
-            {/* <li ref={containerAboutRef} className={`${styles.menu} ${about && styles.active}`} onClick={handleAboutClick}>
-                    <a>
-                      <p>
-                        عن المركز
-                      </p>
-                    </a>
-                    <IoIosArrowDown />
-                    {about &&
-                      <motion.ul
 
-                        initial={{ opacity: 0, y: -40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, type: "tween" }}
-                        className={`${styles.drop_down} `}>
-                        <li className={activeLink === 'who_we_are' ? 'active' : ''}>
-                          <a onClick={() => handleClick('/#who_we_are')}>
-                            من نحن
-                          </a>
-                        </li>
-                        <li className={activeLink === 'learn' ? 'active' : ''}>
-                          <a onClick={() => handleClick('/learn')}>
-                            رؤيتنا
-                          </a>
-                        </li>
-                        <li className={activeLink === 'learn' ? 'active' : ''}>
-                          <a onClick={() => handleClick('/learn')}>
-                            رسالتنا
-                          </a>
-                        </li>
-                      </motion.ul>
-                    } 
-                  </li> */}
 
 
 

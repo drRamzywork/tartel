@@ -365,6 +365,7 @@ section.reading {
         .goal {
           width: 100%;
           gap: 8px;
+          margin-bottom: 16px;
 
           .icon_container {
             img {
@@ -385,6 +386,7 @@ section.reading {
       margin-top: 34px;
       .desc {
         width: 100%;
+        margin-top: 16px;
 
         p {
           font-size: var(--size-16);

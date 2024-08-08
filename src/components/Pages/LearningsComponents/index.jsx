@@ -13,7 +13,7 @@ const LearningsComponents = ({ dataImages, dataAllTopics }) => {
 
   return (
     <>
-      <Navbar dataImages={dataImages} />
+      <Navbar className={true} dataImages={dataImages} />
       <main>
         <HeaderPages
 
