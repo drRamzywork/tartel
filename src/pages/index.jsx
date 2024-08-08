@@ -8,8 +8,9 @@ import OurNews from "@/components/Home/OurNews";
 import Trainings from "@/components/Home/Trainings";
 import Partners from "@/components/Home/Partners";
 import Web from "@/components/Home/Web";
-import Contacts from "@/components/Home/Contacts";
+// import Contacts from "@/components/Home/Contacts";
 import Footer from "@/components/Footer";
+import dynamic from "next/dynamic";
 
 const Effra = localFont({
   src: [
@@ -36,6 +37,11 @@ const Effra = localFont({
   ],
 });
 
+
+
+const ContactsCSR = dynamic(() => import('@/components/Home/Contacts'), {
+  ssr: false,
+});
 export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, partners, dataImages }) {
   const combinedStyles = {
     ...Effra.style,
@@ -105,7 +111,7 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
         <Trainings dataTrainings={dataTrainings} />
         <Partners partners={partners} />
         <Web electronic_readingData={dataImages} />
-        <Contacts dataImages={dataImages} />
+        <ContactsCSR dataImages={dataImages} />
         <Footer dataImages={dataImages} />
       </main>
 
