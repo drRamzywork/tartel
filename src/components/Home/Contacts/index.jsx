@@ -8,6 +8,8 @@ import styles from './index.module.scss';
 import dynamic from 'next/dynamic';
 import { useInView } from 'react-intersection-observer';
 import { toast } from 'react-hot-toast';
+import Map from '@/components/Map';
+import Map2 from '@/components/Map2';
 
 const MapWithNoSSR = dynamic(() => import('@/components/Map'), {
   ssr: false,
@@ -180,7 +182,7 @@ const Contacts = ({ dataImages }) => {
             </div>
           </form>
           <div className={styles.map_container}>
-            <MapWithNoSSR dataImages={dataImages} />
+            <Map2 dataImages={dataImages} />
           </div>
         </div>
       </div>

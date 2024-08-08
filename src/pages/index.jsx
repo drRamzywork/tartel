@@ -104,7 +104,7 @@ export default function Home({ dataNews, dataGoals, goals_desc, dataTrainings, p
         <WhoWeAre dataImages={dataImages} who_we_are={dataImages?.images?.who_we_are} our_messages={dataImages?.images?.our_messages}
         />
         <OurGoals dataGoals={dataGoals} goals_desc={goals_desc} />
-        <OurNews dataNews={dataNews} />
+        {/* <OurNews dataNews={dataNews} /> */}
 
         <Trainings dataTrainings={dataTrainings} />
         <Partners partners={partners} />
