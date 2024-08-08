@@ -37,7 +37,7 @@ const Trainings = ({ dataTrainings }) => {
       slidesPerView: 3,
     },
     1366: {
-      slidesPerView: 3,
+      slidesPerView: 2.5,
     },
     1920: {
       slidesPerView: 3.2,
