@@ -18,13 +18,11 @@ const options = {
   ],
   disableDefaultUI: true,
   zoomControl: true,
-  mapId: 'DEMO_MAP_ID', // Replace with your actual Map ID
 };
 
-const libraries = ['marker']; // Add the 'marker' library
+const libraries = ['marker'];
 
 const Map = ({ dataImages }) => {
-  console.log('Google Maps API Key:', process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY); // Add logging
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
     libraries,
