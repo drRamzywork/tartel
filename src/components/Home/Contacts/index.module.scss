@@ -159,3 +159,117 @@ section.contact {
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  section.contact {
+    margin-top: 32px;
+    .section_title {
+      color: var(--main-blue);
+      margin-bottom: 24px;
+      .title {
+        margin-bottom: 12px;
+
+        h1 {
+          font-size: var(--size-24);
+        }
+      }
+
+      .desc {
+        p {
+          margin: 0;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .boxes_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      margin-bottom: 32px;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .box {
+        width: 343px;
+        height: 218.1px;
+
+        .icon_container {
+          svg {
+          }
+        }
+
+        .box_title {
+          p {
+            margin: 0;
+            color: var(--gray-900);
+            font-size: var(--size-24);
+            font-weight: var(--regular);
+          }
+        }
+
+        .desc {
+          p {
+          }
+        }
+      }
+    }
+
+    .form_section_container {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      gap: 24px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
+
+      form {
+        width: 100%;
+        margin-top: 24px;
+        .input_container {
+          margin-bottom: 8px;
+          textarea,
+          input {
+            &:focus {
+            }
+          }
+
+          textarea {
+          }
+
+          .icon_container {
+            svg {
+            }
+          }
+        }
+      }
+
+      .send_btn {
+        margin-top: 0px;
+
+        button {
+          color: var(--main-white);
+          border: none;
+          background-color: var(--main-blue);
+          text-align: center;
+          font-size: var(--size-20);
+          border-radius: 8px;
+          padding: 12px;
+          width: 167px;
+        }
+      }
+
+      .map_container {
+        width: 100%;
+        height: 440px;
+        border-radius: 12px;
+        img {
+          opacity: 0px;
+        }
+      }
+    }
+  }
+}

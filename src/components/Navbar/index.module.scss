@@ -164,3 +164,230 @@ nav.navbar {
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  nav.navbar {
+    .social_media_links {
+      &.scrolled {
+      }
+
+      .social_nav {
+        display: none;
+        .icons_container {
+          .icon {
+            svg {
+            }
+          }
+        }
+
+        .join_us {
+          button {
+            a {
+            }
+
+            img {
+            }
+          }
+        }
+      }
+    }
+
+    .sec_navbar {
+      padding: 0 !important;
+      &.scrolled {
+        .nav {
+          background-color: transparent;
+        }
+      }
+
+      .nav {
+        background-color: var(--main-blue);
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 9999;
+        width: 100%;
+        box-shadow: unset;
+      }
+
+      .wraper {
+        display: none;
+      }
+
+      .navbar_mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        width: 100%;
+
+        .burger_icon {
+          svg {
+            width: 24px;
+            height: 24px;
+            color: var(--main-white);
+          }
+        }
+
+        .logo {
+          img {
+            width: 137px;
+            height: 52px;
+            object-fit: contain;
+          }
+        }
+
+        .join_us {
+          button {
+            background-color: unset;
+            border: none;
+            a {
+              img {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+      }
+
+      .pages_links {
+        ul {
+          li {
+            a {
+            }
+          }
+
+          li.menu {
+            a {
+              p {
+              }
+            }
+
+            svg {
+            }
+
+            ul.drop_down {
+              li {
+                a {
+                }
+
+                &:hover {
+                }
+              }
+            }
+          }
+
+          li.menu.active {
+            a {
+              p {
+              }
+            }
+            svg {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  nav.navbar {
+    .social_media_links {
+      &.scrolled {
+      }
+
+      .social_nav {
+        .icons_container {
+          .icon {
+            svg {
+            }
+          }
+        }
+
+        .join_us {
+          button {
+            a {
+            }
+
+            img {
+            }
+          }
+        }
+      }
+    }
+
+    .sec_navbar {
+      &.scrolled {
+      }
+
+      .nav {
+      }
+
+      .wraper {
+      }
+
+      .navbar_mobile {
+        display: none;
+        .burger_icon {
+          svg {
+          }
+        }
+
+        .logo {
+          img {
+          }
+        }
+
+        .join_us {
+          button {
+            a {
+              img {
+              }
+            }
+          }
+        }
+      }
+
+      .pages_links {
+        ul {
+          li {
+            a {
+            }
+          }
+
+          li.menu {
+            a {
+              p {
+              }
+            }
+
+            svg {
+            }
+
+            ul.drop_down {
+              li {
+                a {
+                }
+
+                &:hover {
+                }
+              }
+            }
+          }
+
+          li.menu.active {
+            a {
+              p {
+              }
+            }
+            svg {
+            }
+          }
+        }
+      }
+    }
+  }
+}

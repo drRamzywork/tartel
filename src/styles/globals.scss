@@ -18,6 +18,7 @@
 
   --main-black: #000000;
 
+  --size-14: 14px;
   --size-16: 16px;
   --size-20: 20px;
   --size-24: 24px;
@@ -56,10 +57,27 @@ a {
   text-decoration: none;
 }
 
+.mobile {
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.desktop {
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
+
 #our_news {
   .swiper-wrapper {
     padding-top: 44px;
     padding-bottom: 44px;
+
+    @media screen and (max-width: 992px) {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
   }
 
   #swiper {
@@ -70,6 +88,10 @@ a {
     position: relative;
     overflow: hidden;
     padding-bottom: 44px;
+
+    @media screen and (max-width: 992px) {
+      padding-bottom: 24px;
+    }
 
     .left_arrow,
     .right_arrow {
@@ -88,14 +110,30 @@ a {
         margin: auto;
         color: var(--main-white);
       }
+
+      @media screen and (max-width: 992px) {
+        width: 24px;
+        height: 24px;
+        svg {
+          width: 19px;
+          height: 24px;
+        }
+      }
     }
 
     .left_arrow {
       left: calc(50% - 60px - 30px);
+      @media screen and (max-width: 992px) {
+        left: calc(50% - 10px - 30px);
+      }
     }
 
     .right_arrow {
       right: calc(50% - 60px - 30px);
+
+      @media screen and (max-width: 992px) {
+        right: calc(50% - 27px - 30px);
+      }
     }
 
     .swiper-button-disabled {

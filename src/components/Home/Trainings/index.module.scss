@@ -230,3 +230,145 @@ section.trainings {
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  section.trainings {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    .sec_title {
+      margin-bottom: 24px;
+      h1 {
+        font-size: var(--size-24);
+      }
+
+      .img_container {
+        img {
+        }
+      }
+    }
+
+    .section_container {
+      .swiper_container {
+        .box {
+          width: 302px;
+          padding: 8px;
+          .img_contaienr {
+            max-height: 192px;
+
+            .lists {
+              padding-right: 12px !important;
+              padding-bottom: 12px !important;
+
+              .list_title {
+                p {
+                  font-size: var(--size-20) !important;
+                }
+              }
+
+              .list {
+                .icon_container {
+                  svg {
+                  }
+                }
+
+                p {
+                  font-size: var(--size-16) !important;
+                }
+              }
+            }
+            img {
+            }
+          }
+
+          .text_container {
+            .title_sec {
+              .title {
+                p {
+                  font-size: var(--size-20);
+                }
+              }
+
+              .duration {
+                font-size: 14px;
+              }
+            }
+
+            .dates {
+              .date {
+                p {
+                  // font-size: var(--size-16);
+                  font-size: 14px;
+                }
+
+                .icon_container {
+                  svg {
+                  }
+                }
+              }
+
+              .time {
+                flex-direction: column;
+                align-items: flex-start;
+                .time_container {
+                  .icon_container {
+                    svg {
+                    }
+                  }
+
+                  p {
+                    font-size: 14px;
+                  }
+                }
+
+                .is_online {
+                  .icon_container {
+                    svg {
+                    }
+                  }
+
+                  p {
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .box.active {
+          .img_contaienr {
+            .lists {
+              .list_container {
+                .list_title {
+                  p {
+                  }
+                }
+
+                .list {
+                  .icon_container {
+                    svg {
+                    }
+                  }
+
+                  p {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .btn_container {
+        margin-top: 24px;
+
+        button {
+          padding: 12px;
+          font-size: var(--size-16);
+          font-weight: var(--meduim);
+          width: unset;
+        }
+      }
+    }
+  }
+}

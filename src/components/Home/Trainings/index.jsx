@@ -25,25 +25,25 @@ const Trainings = ({ dataTrainings }) => {
 
   const breakpoints = {
     320: {
-      slidesPerView: 1,
+      slidesPerView: 1.1,
     },
     640: {
-      slidesPerView: 2,
+      slidesPerView: 1.1,
     },
     768: {
-      slidesPerView: 2.1,
+      slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 2.1,
+      slidesPerView: 3,
     },
     1366: {
-      slidesPerView: 2.5,
+      slidesPerView: 3,
     },
     1920: {
-      slidesPerView: 3.1,
+      slidesPerView: 3.2,
     },
-
   }
+
 
   return (
     <section id='trainings' className={styles.trainings}>

@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { IoIosArrowDown } from "react-icons/io";
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import NavbarMobile from './NavbarMobile';
 
 const Navbar = ({ dataImages }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,6 +86,7 @@ const Navbar = ({ dataImages }) => {
         exit={{ opacity: 0 }}
         className={`${styles.social_media_links} ${isScrolled ? styles.scrolled : ''}`}
       >
+
         <div className="container">
           <div className={styles.social_nav}>
             <div className={styles.icons_container}>
@@ -111,6 +113,7 @@ const Navbar = ({ dataImages }) => {
             </div>
           </div>
         </div>
+
       </motion.div>
 
       <div className={`${styles.sec_navbar} ${!isScrolled ? styles.scrolled : ''}`}>
@@ -237,9 +240,15 @@ const Navbar = ({ dataImages }) => {
                 </ul>
               </motion.div>
             </div>
+
+
+            <NavbarMobile dataImages={dataImages} />
+
           </div>
         </div>
       </div >
+
+
     </nav >
   );
 };

@@ -81,3 +81,72 @@ section.our_goals {
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  section.our_goals {
+    margin-top: 32px;
+    .goals_bg {
+      img {
+      }
+    }
+
+    .sec_container {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      .text_container {
+        .title {
+          margin-bottom: 20px;
+          h1 {
+            font-size: var(--size-24);
+            margin: 0;
+          }
+        }
+
+        .desc {
+          p {
+            font-size: var(--size-16);
+            font-weight: var(--regular);
+            color: var(--gray-700);
+          }
+        }
+      }
+
+      .goals_container {
+        margin-top: 16px;
+
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 12px;
+
+        .goal {
+          background-color: var(--main-blue);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          border-right: 12px solid var(--sec-blue);
+          border-radius: 12px;
+          padding: 18px;
+          height: 72px;
+          .icon_container {
+            img {
+              width: 32px;
+              height: 32px;
+              object-fit: contain;
+            }
+          }
+
+          .title {
+            p {
+              color: var(--sec-white);
+              font-size: 18px;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

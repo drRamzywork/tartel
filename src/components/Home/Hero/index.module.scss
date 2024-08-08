@@ -162,10 +162,11 @@ section.hero {
           .img_container {
             width: 48px;
             height: 48px;
-            img {
+            svg {
               width: 100%;
               height: 100%;
               object-fit: contain;
+              transition: all 0.3s ease-in-out;
             }
           }
 
@@ -175,6 +176,126 @@ section.hero {
 
               font-size: var(--size-32);
               font-weight: 100;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  section.hero {
+    .hero_container {
+      height: unset;
+      .img_container {
+        display: none;
+        img {
+        }
+
+        &::after {
+        }
+      }
+
+      .content_container {
+        width: 100%;
+        padding-top: 94px;
+        padding-bottom: 29px;
+        img {
+          width: 100%;
+          height: 100%;
+          transform: scale(1.2) rotate(0deg);
+        }
+
+        .bg2 {
+          display: none;
+          img {
+          }
+        }
+
+        .text {
+          .title {
+            margin-bottom: 12px;
+            h1 {
+              font-size: var(--size-24);
+            }
+          }
+
+          .desc {
+            margin-bottom: 16px;
+            p {
+              margin: 0;
+              font-size: var(--size-14);
+              font-weight: var(--regular);
+              color: #eeeeee;
+            }
+          }
+
+          .join_btn {
+            button {
+              padding: 12px;
+              font-size: var(--size-16);
+              font-weight: var(--meduim);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .news {
+    margin-top: 32px;
+    position: unset;
+    .boxes_container {
+      flex-wrap: wrap;
+      gap: 8px;
+      .box {
+        width: 167px;
+        height: 96px;
+        // padding: 12px 16px 12px 16px;
+        border-radius: 12px;
+        background-color: var(--main-blue);
+        .box_inner {
+          .num {
+            line-height: 31px;
+
+            font-size: var(--size-24);
+            font-weight: var(--bold);
+            color: var(--main-white);
+          }
+
+          .text {
+            .img_container {
+              width: 24px;
+              height: 24px;
+              svg {
+                color: var(--main-white);
+
+                // stroke: var(--main-white);
+                // fill: var(--main-white);
+
+                path {
+                  // stroke: var(--main-white);
+                  // color: var(--main-whitse);
+                }
+              }
+            }
+
+            .box_title {
+              p {
+                font-size: var(--size-20);
+                font-weight: var(--regular);
+                color: var(--main-white);
+              }
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          svg {
+            path {
+              // stroke: var(--main-white);
+              fill: var(--main-white);
             }
           }
         }

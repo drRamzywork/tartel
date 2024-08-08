@@ -45,6 +45,27 @@ const WhoWeAre = ({ who_we_are, our_messages, dataImages }) => {
               <p>مركز "ترتيل" هو وقف تأسس في المملكة العربية السعودية، تحديدًا بمحافظة الخرج، في عام 1444هـ. مرخص من الهيئة العامة للأوقاف برقم (4122)</p>
             </div>
 
+
+            <div className="monile">
+
+              <div className={styles.main_image_container}>
+                <img className={styles.main_image} src={who_we_are?.image} alt="" />
+                <div className={styles.sticker}>
+                  <div className={styles.shape}>
+                    <img src="/assets/svgs/star.svg" alt="" />
+                  </div>
+
+                  <p >
+                    <span>مركز</span>
+                    نسائي
+                  </p >
+
+
+
+                </div>
+              </div>
+            </div>
+
             <div className={styles.our_vision}>
               <motion.div initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -81,20 +102,24 @@ const WhoWeAre = ({ who_we_are, our_messages, dataImages }) => {
               <img src="/assets/svgs/dots_bg.svg" alt="" />
 
             </div>
-            <div className={styles.main_image_container}>
-              <img className={styles.main_image} src={who_we_are.image} alt="" />
-              <div className={styles.sticker}>
-                <div className={styles.shape}>
-                  <img src="/assets/svgs/star.svg" alt="" />
+
+            <div className="desktop">
+
+              <div className={styles.main_image_container}>
+                <img className={styles.main_image} src={who_we_are.image} alt="" />
+                <div className={styles.sticker}>
+                  <div className={styles.shape}>
+                    <img src="/assets/svgs/star.svg" alt="" />
+                  </div>
+
+                  <p >
+                    <span>مركز</span>
+                    نسائي
+                  </p >
+
+
+
                 </div>
-
-                <p >
-                  <span>مركز</span>
-                  نسائي
-                </p >
-
-
-
               </div>
             </div>
 

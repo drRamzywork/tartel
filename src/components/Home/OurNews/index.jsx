@@ -21,6 +21,29 @@ const OurNews = ({ dataNews }) => {
     setActiveSlide(index);
   };
 
+  const breakpoints = {
+    320: {
+      slidesPerView: 2.8,
+    },
+    380: {
+      slidesPerView: 2.8,
+    },
+    640: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+    1366: {
+      slidesPerView: 3,
+    },
+    1920: {
+      slidesPerView: 3,
+    },
+  };
 
 
   return (
@@ -73,7 +96,7 @@ const OurNews = ({ dataNews }) => {
               <div className={styles.swiper} id='swiper'>
                 <Swiper
                   // spaceBetween={8}
-                  slidesPerView={3}
+                  // slidesPerView={3}
                   pagination={{ clickable: true }}
                   dir="rtl"
                   modules={[Navigation, FreeMode]}
@@ -82,6 +105,7 @@ const OurNews = ({ dataNews }) => {
                   onSlideChange={handleSlideChange}
                   className={styles.swiper_contain}
                   centeredSlides={true}
+                  breakpoints={breakpoints}
 
                   navigation={{
                     prevEl: '.left_arrow',

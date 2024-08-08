@@ -32,3 +32,27 @@ section.partners {
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  section.partners {
+    padding-bottom: 32px;
+    .sec_title {
+      padding-top: 32px;
+      margin-bottom: 60px;
+      h1 {
+        font-size: var(--size-24);
+      }
+    }
+
+    .section_container {
+      gap: 8x;
+      .logo {
+        width: 109px;
+        height: 109px;
+
+        img {
+        }
+      }
+    }
+  }
+}
