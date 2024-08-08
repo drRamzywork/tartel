@@ -20,15 +20,25 @@ const options = {
   zoomControl: true,
 };
 
+
 const Map = ({ dataImages }) => {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
-  if (loadError) {
-    console.error('Errorrrrrrr loading Google Maps:', loadError);
-    return <div>Failed to load map</div>;
-  }
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  if (isClient)
+
+
+    if (loadError) {
+      console.error('Errorrrrrrr loading Google Maps:', loadError);
+      return <div>Failed to load map</div>;
+    }
 
   const lat = Number(dataImages?.items?.location_lat?.text);
   const lng = Number(dataImages?.items?.location_lng?.text);
