@@ -1,6 +1,5 @@
-// Map.js
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 
 const mapContainerStyle = {
@@ -20,27 +19,26 @@ const options = {
   zoomControl: true,
 };
 
-
 const Map = ({ dataImages }) => {
-
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
+  useEffect(() => {
+    console.log('Google Maps API key:', process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+    console.log('Map loaded:', isLoaded);
+    console.log('Load error:', loadError);
+  }, [isLoaded, loadError]);
+
   if (loadError) {
-    console.error('Errorrrrrrr loading Google Maps:', loadError);
+    console.error('Error loading Google Maps:', loadError);
     return <div>Failed to load map</div>;
   }
 
   const lat = Number(dataImages?.items?.location_lat?.text) || 24.14691252116138;
   const lng = Number(dataImages?.items?.location_lng?.text) || 47.3199603;
 
-
-
-  const mapCenter = {
-    lat: lat,
-    lng: lng,
-  };
+  const mapCenter = { lat, lng };
   const zoomLevel = 15;
 
   const redirectToGoogleMaps = () => {
