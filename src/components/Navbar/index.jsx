@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import NavbarMobile from './NavbarMobile';
 
-const Navbar = ({ dataImages }) => {
+const Navbar = ({ dataImages, className }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('');
   const [about, setAbout] = useState(false);
@@ -116,7 +116,7 @@ const Navbar = ({ dataImages }) => {
 
       </motion.div>
 
-      <div className={`${styles.sec_navbar} ${!isScrolled ? styles.scrolled : ''}`}>
+      <div className={`${styles.sec_navbar} ${!isScrolled ? styles.scrolled : ''} ${className && styles.blue_bg}`}>
         <div className={`${styles.nav} ${isScrolled ? `navbar fixed-top ` : ''}`}>
           <div className={`container `}>
             <div className={`${styles.wraper}  `}>

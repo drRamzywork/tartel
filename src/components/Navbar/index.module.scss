@@ -196,7 +196,7 @@ nav.navbar {
       padding: 0 !important;
       &.scrolled {
         .nav {
-          background-color: transparent;
+          background-color: #005d8533;
         }
       }
 
@@ -227,6 +227,36 @@ nav.navbar {
             width: 24px;
             height: 24px;
             color: var(--main-white);
+          }
+        }
+
+        .meunu_container {
+          position: absolute;
+          top: 80px;
+          right: 0;
+          background-color: var(--main-white);
+          width: 100%;
+          height: 100vh;
+          z-index: 999;
+
+          ul {
+            padding-right: 16px;
+            margin-top: 24px;
+            li {
+              list-style-type: none;
+              border-bottom: 1px solid var(--main-blue);
+              padding-top: 24px;
+              padding-bottom: 8px;
+              a {
+                color: var(--main-blue);
+                font-size: var(--size-16);
+                font-weight: var(--meduim);
+                text-decoration: none;
+                p {
+                  margin: 0;
+                }
+              }
+            }
           }
         }
 
@@ -288,6 +318,12 @@ nav.navbar {
             }
           }
         }
+      }
+    }
+
+    .blue_bg {
+      .nav {
+        background-color: var(--main-blue) !important;
       }
     }
   }

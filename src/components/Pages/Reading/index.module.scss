@@ -261,3 +261,149 @@ section.reading {
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  section.reading {
+    padding-top: 42px;
+    .bg_contaienr {
+      img {
+      }
+    }
+
+    .section_container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .text_container {
+        .sec_ask {
+          margin-bottom: 12px;
+          p {
+            font-size: var(--size-20);
+          }
+          .icon_container {
+            img {
+              max-width: 81px;
+            }
+          }
+        }
+
+        .title {
+          margin-bottom: 16px;
+          h1 {
+            font-size: var(--size-24);
+          }
+        }
+
+        .desc {
+          font-size: var(--size-16);
+          margin-bottom: 16px;
+        }
+
+        .join_us_btn {
+          a {
+          }
+          button {
+            padding: 12px;
+            font-size: var(--size-16);
+            font-weight: var(--meduim);
+            font-size: 18px;
+            width: fit-content;
+          }
+        }
+      }
+
+      .images_container {
+        display: none;
+
+        .bg_img {
+          img {
+          }
+        }
+
+        .first_img {
+          img {
+          }
+        }
+
+        .sec_img {
+          img {
+          }
+        }
+      }
+    }
+
+    .goals {
+      margin-top: 34px;
+      padding-bottom: 0;
+      #container {
+        flex-direction: column;
+      }
+
+      .goals_bg {
+        img {
+        }
+      }
+
+      .img_container {
+        width: 100%;
+        height: 195px;
+        img {
+        }
+        .title {
+          h4 {
+            font-size: var(--size-24);
+          }
+        }
+
+        &::after {
+        }
+      }
+
+      .goals_container {
+        width: 100%;
+
+        .goal {
+          width: 100%;
+          gap: 8px;
+
+          .icon_container {
+            img {
+              width: 32px;
+              height: 32px;
+            }
+          }
+
+          p {
+            font-size: var(--size-16);
+          }
+        }
+      }
+    }
+
+    .target {
+      flex-direction: column-reverse;
+      margin-top: 34px;
+      .desc {
+        width: 100%;
+
+        p {
+          font-size: var(--size-16);
+        }
+      }
+      .img_container {
+        width: 100%;
+        height: 195px;
+        img {
+        }
+        .title {
+          h4 {
+            font-size: var(--size-24);
+          }
+        }
+
+        &::after {
+        }
+      }
+    }
+  }
+}

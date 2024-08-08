@@ -13,7 +13,7 @@ const Reading = ({ dataImages }) => {
   return (
     <>
 
-      <Navbar dataImages={dataImages} />
+      <Navbar className={true} dataImages={dataImages} />
       <main>
         <HeaderPages
           mainImg={mainImg}
