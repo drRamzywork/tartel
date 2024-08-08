@@ -1,3 +1,4 @@
+// Contacts.js
 import React, { useEffect, useState } from 'react';
 import { MdLocationOn, MdMailOutline } from "react-icons/md";
 import { IoCallOutline } from "react-icons/io5";
@@ -8,10 +9,10 @@ import dynamic from 'next/dynamic';
 import { useInView } from 'react-intersection-observer';
 import { toast } from 'react-hot-toast';
 
-
 const MapWithNoSSR = dynamic(() => import('@/components/Map'), {
   ssr: false,
 });
+
 const Contacts = ({ dataImages }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -53,7 +54,6 @@ const Contacts = ({ dataImages }) => {
       }
     );
   };
-
 
   const [currentBox, setCurrentBox] = useState(-1);
   const { ref, inView } = useInView({
