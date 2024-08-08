@@ -1,7 +1,7 @@
 // Map.js
 'use client';
-import React, { useEffect, useRef } from 'react';
-import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+import React, { useEffect, useState } from 'react';
+import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 
 const mapContainerStyle = {
   width: '100%',
@@ -20,53 +20,49 @@ const options = {
   zoomControl: true,
 };
 
-const libraries = ['marker'];
 
 const Map = ({ dataImages }) => {
+
+
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-    libraries,
   });
 
-  const mapRef = useRef();
-
-  useEffect(() => {
-    if (isLoaded && mapRef.current) {
-      const lat = Number(dataImages?.items?.location_lat?.text);
-      const lng = Number(dataImages?.items?.location_lng?.text);
-      const mapCenter = {
-        lat: lat,
-        lng: lng,
-      };
-
-      const map = new google.maps.Map(mapRef.current, {
-        center: mapCenter,
-        zoom: 15,
-        options,
-      });
-
-      google.maps.importLibrary('marker').then(({ AdvancedMarkerElement }) => {
-        const marker = new AdvancedMarkerElement({
-          map,
-          position: mapCenter,
-          title: 'Location',
-        });
-
-        marker.addListener('click', () => {
-          window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank');
-        });
-      });
-    }
-  }, [isLoaded, dataImages]);
-
   if (loadError) {
-    console.error('Error loading Google Maps:', loadError);
+    console.error('Errorrrrrrr loading Google Maps:', loadError);
     return <div>Failed to load map</div>;
   }
 
+  const lat = Number(dataImages?.items?.location_lat?.text) || 24.14691252116138;
+  const lng = Number(dataImages?.items?.location_lng?.text) || 47.3199603;
+
+
+
+  const mapCenter = {
+    lat: lat,
+    lng: lng,
+  };
+  const zoomLevel = 15;
+
+  const redirectToGoogleMaps = () => {
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank');
+  };
+
   if (!isLoaded) return <div>Loading map...</div>;
 
-  return <div ref={mapRef} style={mapContainerStyle}></div>;
+  return (
+    <GoogleMap
+      mapContainerStyle={mapContainerStyle}
+      center={mapCenter}
+      zoom={zoomLevel}
+      options={options}
+    >
+      <Marker
+        position={mapCenter}
+        onClick={redirectToGoogleMaps}
+      />
+    </GoogleMap>
+  );
 };
 
 export default Map;
