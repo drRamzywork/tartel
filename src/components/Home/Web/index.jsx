@@ -25,9 +25,13 @@ const Web = ({ electronic_readingData }) => {
             </div>
 
             <div className={styles.btn_container}>
-              <button>
-                {electronic_readingData?.items?.btn_electronic_reading?.text}
-              </button>
+              <a href={`${electronic_readingData?.items?.btn_electronic_reading?.name}`}>
+
+
+                <button>
+                  {electronic_readingData?.items?.btn_electronic_reading?.text}
+                </button>
+              </a>
             </div>
 
 

@@ -9,6 +9,7 @@ import Link from 'next/link';
 const Reading = ({ dataImages }) => {
   const mainImg = '/assets/imgs/Reading.jpeg';
   const mainTitle = 'المقرأة الالكترونية';
+
   return (
     <>
 
