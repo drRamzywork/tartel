@@ -192,7 +192,7 @@ const Navbar = ({ dataImages }) => {
                     } */}
                   </li>
 
-                  <li>
+                  <li className={activeLink === 'who_we_are' ? 'active' : ''}>
                     <a onClick={() => handleClick('/#who_we_are')}>
                       عن المركز
                     </a>
