@@ -104,9 +104,12 @@ section.our_news {
   section.our_news {
     margin-bottom: 32px;
     .section_container {
+      padding-top: 30px;
       .text_container {
         .title {
+          margin-bottom: 24px;
           h1 {
+            font-size: var(--size-24);
           }
 
           .circle {
