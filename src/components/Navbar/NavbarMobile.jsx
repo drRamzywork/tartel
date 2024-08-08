@@ -84,6 +84,7 @@ const NavbarMobile = ({ dataImages }) => {
 
 
   const handleClick = (id) => {
+    setMenu(false)
     if (id.startsWith('#')) {
       const sectionId = id.substring(1);
       document.getElementById(sectionId)
@@ -93,6 +94,24 @@ const NavbarMobile = ({ dataImages }) => {
       router.push(id);
     }
   };
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => {
+        const top = section.offsetTop - 50;
+        const bottom = top + section.offsetHeight;
+        if (window.scrollY >= top && window.scrollY < bottom) {
+          setActiveLink(section.getAttribute('id'));
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
 
   return (
@@ -165,7 +184,7 @@ const NavbarMobile = ({ dataImages }) => {
               </a>
             </li>
             <li className={`${styles.menu} ${router.pathname === '/electronic-reading' && styles.active}`}>
-              <Link href={'/electronic-reading'} >
+              <Link href={'/electronic-reading'} onClick={() => setMenu(false)}>
                 <p>
                   المقرأه الالكترونية
                 </p>
@@ -174,7 +193,7 @@ const NavbarMobile = ({ dataImages }) => {
 
             <li
               className={`${styles.menu} ${router.pathname === '/learning' && styles.active}`} >
-              <Link href={'/learning'}>
+              <Link href={'/learning'} onClick={() => setMenu(false)}>
                 <p>
                   التعليم
                 </p>
@@ -182,7 +201,7 @@ const NavbarMobile = ({ dataImages }) => {
 
             </li>
 
-            <li className={activeLink === 'who_we_are' ? 'active' : ''}>
+            <li className={activeLink === 'who_we_are' ? 'active' : ''} onClick={() => setMenu(false)}>
               <a onClick={() => handleClick('/#who_we_are')}>
                 عن المركز
               </a>

@@ -247,11 +247,19 @@ nav.navbar {
               border-bottom: 1px solid var(--main-blue);
               padding-top: 24px;
               padding-bottom: 8px;
+
+              &.active {
+                // background-color: red;
+                a {
+                  color: var(--sec-blue);
+                }
+              }
               a {
                 color: var(--main-blue);
-                font-size: var(--size-16);
-                font-weight: var(--meduim);
+                font-size: 20px;
+                font-weight: var(--bold);
                 text-decoration: none;
+
                 p {
                   margin: 0;
                 }
