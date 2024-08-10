@@ -237,7 +237,9 @@ section.who_we_are {
     }
 
     .section_container {
-      padding-top: 32px;
+      padding-top: 85px;
+      // padding-top: 0;
+      // margin-top: 40px;
       .text_container {
         max-width: unset;
         width: 100%;
@@ -399,6 +401,7 @@ section.who_we_are {
     }
   }
 }
+
 @media screen and (min-width: 992px) {
   section.who_we_are {
     .section_bg {

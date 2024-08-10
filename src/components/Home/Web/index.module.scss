@@ -70,6 +70,8 @@ section.web {
 
 @media screen and (max-width: 992px) {
   section.web {
+    padding-top: 40px;
+    // margin-top: 30px;
     .img_container {
       img {
         width: 100%;
@@ -79,7 +81,7 @@ section.web {
     }
 
     .section_container {
-      padding-top: 24px;
+      padding-top: 30x;
 
       .sec_title {
         margin-bottom: 16px;

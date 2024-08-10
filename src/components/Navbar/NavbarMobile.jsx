@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.module.scss';
 import Link from 'next/link';
@@ -9,9 +5,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useRouter } from 'next/router';
-
-
-
 
 const NavbarMobile = ({ dataImages }) => {
   const router = useRouter();
@@ -60,11 +53,7 @@ const NavbarMobile = ({ dataImages }) => {
     },
   };
 
-
   const menuRef = useRef(null);
-
-
-
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -80,39 +69,42 @@ const NavbarMobile = ({ dataImages }) => {
     };
   }, []);
 
+  // const handleClick = (id) => {
+  //   setMenu(false)
+  //   if (id.startsWith('#')) {
+  //     const sectionId = id.substring(1);
+  //     document.getElementById(sectionId)
 
+  //     router.push(`#${sectionId}`)
+  //   } else {
+  //     router.push(id);
+  //   }
+  // };
 
 
   const handleClick = (id) => {
-    setMenu(false)
+    setMenu(false);
     if (id.startsWith('#')) {
       const sectionId = id.substring(1);
-      document.getElementById(sectionId)
+      const element = document.getElementById(sectionId);
 
-      router.push(`#${sectionId}`)
+      if (element) {
+        // Set the scroll position manually with zero offset
+        const yOffset = 200; // No offset, scrolls exactly to the top
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth' // Smooth scrolling
+        });
+
+        // Update the URL hash without reloading the page
+        router.push(`#${sectionId}`, undefined, { shallow: true });
+      }
     } else {
       router.push(id);
     }
   };
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section');
-      sections.forEach((section) => {
-        const top = section.offsetTop - 50;
-        const bottom = top + section.offsetHeight;
-        if (window.scrollY >= top && window.scrollY < bottom) {
-          setActiveLink(section.getAttribute('id'));
-        }
-      });
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
 
   return (
     <motion.div
@@ -231,8 +223,6 @@ const NavbarMobile = ({ dataImages }) => {
         </button>
       </div>
     </motion.div>
-
-
   );
 };
 

@@ -103,8 +103,12 @@ section.our_news {
 @media screen and (max-width: 992px) {
   section.our_news {
     margin-bottom: 32px;
+    // margin-top: 80px;
+    padding-top: 88px;
+
     .section_container {
-      padding-top: 30px;
+      // padding-top: 30px;
+      padding-top: 0;
       .text_container {
         .title {
           margin-bottom: 24px;

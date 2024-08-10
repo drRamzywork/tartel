@@ -22,7 +22,6 @@ const Trainings = ({ dataTrainings }) => {
     setActiveSlide(index);
   };
 
-
   const breakpoints = {
     320: {
       slidesPerView: 1.1,
@@ -44,10 +43,10 @@ const Trainings = ({ dataTrainings }) => {
     },
   }
 
-
   return (
     <section id='trainings' className={styles.trainings}>
       <div className={styles.section_container}>
+
         <div className="container">
           <motion.div initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -166,7 +165,6 @@ const Trainings = ({ dataTrainings }) => {
             دليل الدورات التدريبية
           </button>
         </div>
-
 
       </div>
     </section >
